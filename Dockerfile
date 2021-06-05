@@ -5,3 +5,5 @@ RUN a2enmod rewrite
 
 ADD . /var/www
 ADD ./public /var/www/html
+RUN npm install
+RUN composer update
