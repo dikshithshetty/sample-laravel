@@ -12,6 +12,7 @@ ENV NGINX_VERSION 1.8.0
 # Create some needed directories
 RUN mkdir -p /app/.heroku/php /app/.profile.d
 WORKDIR /app/user
+COPY . /app/user
 
 # so we can run PHP in here
 ENV PATH /app/.heroku/php/bin:/app/.heroku/php/sbin:$PATH
