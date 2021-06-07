@@ -2,7 +2,7 @@
 FROM heroku/cedar:14
 
 # Internally, we arbitrarily use port 3000
-ENV PORT 3000
+ENV PORT 8080
 
 # Which versions?
 ENV PHP_VERSION 5.6.15
@@ -11,8 +11,8 @@ ENV NGINX_VERSION 1.8.0
 
 # Create some needed directories
 RUN mkdir -p /app/.heroku/php /app/.profile.d
-WORKDIR /app/user
-COPY . /app/user
+WORKDIR /www/var
+COPY . /www/var
 
 # so we can run PHP in here
 ENV PATH /app/.heroku/php/bin:/app/.heroku/php/sbin:$PATH
